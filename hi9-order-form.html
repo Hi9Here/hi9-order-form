@@ -9,7 +9,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-form/iron-form.html">
-<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-input/paper-input.html">Î
+<link rel="import" href="../iron-ajax/iron-ajax.html">Î
+<link rel="import" href="../paper-button/paper-button.html">Î
+<link rel="import" href="../paper-checkbox/paper-checkbox.html">Î
+<link rel="import" href="../paper-dropdown-menu/paper-dropdown-menu.html">Î
+<link rel="import" href="../paper-menu/paper-menu.html">Î
+<link rel="import" href="../paper-input/paper-input.html">Î
 
 <!--
 An element providing a solution to no problem in particular.
@@ -32,19 +38,26 @@ Example:
         box-sizing: border-box;
       }
 
+      paper-button {
+        font-family: Roboto, Helvetica, arial, sans-serif;
+        font-weight: 300;
+      }
     </style>
 
 
     <form is="iron-form" id="form" method="post" action="/form/handler">
-      <paper-input label="Name"></paper-input>
+      <paper-input label="No of Chromebooks" error-message="Numbers Only!" bind-value="{{myValue}}" auto-validate pattern="[0-9]*" max="10000" min="1" required></paper-input>
+      <paper-input label="No of MIFIs" error-message="Numbers Only!" bind-value="{{myValue}}" auto-validate pattern="[0-9]*" max="10000" min="1" required></paper-input>
+      <paper-input label="6 Months Licence of Hi9.uk" error-message="Numbers Only!" bind-value="{{myValue}}" auto-validate pattern="[0-9]*" max="10000" min="1" required></paper-input>
     </form>
+    <paper-button raised>Submit</paper-button>
+    <paper-button raised>Reset</paper-button>
 
   </template>
 
 </dom-module>
 
 <script>
-
   Polymer({
 
     is: 'hi9-order-form',
@@ -56,5 +69,4 @@ Example:
 
 
   });
-
 </script>
